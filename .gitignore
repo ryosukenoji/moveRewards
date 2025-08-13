@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+public/
+build/
+.cache/
+.temp/
+
+# Firebase
+.firebase/
+.firebase-tools.json
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs
+*.pid
+*.seed
+*.pid.lock
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Test coverage
+coverage/
+
+# Misc
+*.local
