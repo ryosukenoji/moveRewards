@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,7 +9,9 @@
   <meta name="format-detection" content="telephone=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #f7f8fb;
@@ -16,80 +19,396 @@
       --ink: #0f172a;
       --muted: #64748b;
       --line: #e2e8f0;
-      --brand: #4169E1; /* Royal Blue */
+      --brand: #4169E1;
+      /* Royal Blue */
       --radius: 16px;
-      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+      --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .06);
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { margin: 0; font-family: 'Noto Sans','Noto Sans JP',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif; color: var(--ink); background: var(--bg); }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; }
 
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 64px 0; }
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-    .btn { display: inline-block; padding: 10px 16px; border-radius: 12px; font-size: 14px; border: 1px solid var(--brand); background: #fff; color: var(--brand); }
-    .btn.primary { background: var(--brand); color: #fff; }
-    .muted { color: var(--muted); }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', 'Noto Sans JP', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      border: 1px solid var(--brand);
+      background: #fff;
+      color: var(--brand);
+    }
+
+    .btn.primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
 
     /* Header */
-    .site-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: rgba(255,255,255,.85); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-    .logo-ph { width: 32px; height: 32px; border-radius: 10px; background: var(--brand); }
-    .nav-links { display: none; gap: 20px; font-size: 14px; }
-    .nav-links a { border-bottom: 2px solid transparent; padding-bottom: 6px; }
-    .nav-links a[aria-current="page"], .nav-links a:hover { border-color: var(--brand); }
-    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, .85);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .logo-ph {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--brand);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      border-bottom: 2px solid transparent;
+      padding-bottom: 6px;
+    }
+
+    .nav-links a[aria-current="page"],
+    .nav-links a:hover {
+      border-color: var(--brand);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
 
     /* Hero */
-    .hero { padding: 72px 0 64px; }
-    .hero-grid { display: grid; gap: 28px; align-items: center; }
-    @media (min-width: 992px) { .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 40px; } }
-    .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-    .pill .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--brand); }
-    .hero h1 { font-size: clamp(28px, 4.2vw, 40px); line-height: 1.2; margin: 12px 0 0; }
-    .hero p { margin: 16px 0 0; color: var(--muted); line-height: 1.8; }
-    .cta { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; }
-    .kv-ph { aspect-ratio: 16/10; display: grid; place-items: center; border-radius: 24px; border: 1px solid var(--line); box-shadow: var(--shadow); background: conic-gradient(from 180deg at 50% 50%, #f1f5f9, #e5e7eb, #f1f5f9); }
-    .kv-inner { text-align: center; padding: 28px; }
-    .ph-rect { width: 100%; height: 160px; border-radius: 14px; background: repeating-linear-gradient(45deg, #e5e7eb, #e5e7eb 10px, #f1f5f9 10px, #f1f5f9 20px); }
+    .hero {
+      padding: 72px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+    .gform-scale {
+  position: relative;   /* ★ 高さを制御する土台にする */
+  width: 100%;
+  overflow: hidden;
+}
+.gform-scale iframe {
+  position: absolute;   /* ★ フローから外す（実幅640pxの影響を消す） */
+  left: 0; top: 0;
+  display: block;
+  width: 640px;         /* 実寸 */
+  height: 800px;       /* 実寸（JSで縮小後の高さに合わせてラッパを伸縮） */
+  border: 0;
+  transform-origin: 0 0;
+  will-change: transform; /* サブピクセルのにじみ軽減 */
+}
+
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 40px);
+      line-height: 1.2;
+      margin: 12px 0 0;
+    }
+
+    .hero p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .cta {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .kv-ph {
+      aspect-ratio: 16/10;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: conic-gradient(from 180deg at 50% 50%, #f1f5f9, #e5e7eb, #f1f5f9);
+    }
+
+    .kv-inner {
+      text-align: center;
+      padding: 28px;
+    }
+
+    .ph-rect {
+      width: 100%;
+      
+      border-radius: 14px;
+      background: repeating-linear-gradient(45deg, #e5e7eb, #e5e7eb 10px, #f1f5f9 10px, #f1f5f9 20px);
+    }
 
     /* Section headings */
-    .section h2 { font-size: clamp(22px, 3vw, 30px); margin: 0 0 18px; }
-    .section .lead { color: var(--muted); margin-top: -6px; font-size: 14px; }
+    .section h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      margin: 0 0 18px;
+    }
+
+    .section .lead {
+      color: var(--muted);
+      margin-top: -6px;
+      font-size: 14px;
+    }
 
     /* Grids */
-    .grid { display: grid; gap: 16px; }
-    @media (min-width: 768px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-4 { grid-template-columns: repeat(4, 1fr); } }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
 
-    .feature { padding: 18px; }
-    .badge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 999px; background: #eef2ff; color: var(--brand); margin-bottom: 8px; }
-    .feature h3 { margin: 4px 0 8px; font-size: 16px; }
-    .feature p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.7; }
+    @media (min-width: 768px) {
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    .step { padding: 18px; position: relative; }
-    .step-num { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--brand); color: var(--brand); border-radius: 999px; font-weight: 700; margin-bottom: 8px; }
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-    .list { padding-left: 1.2em; margin: 0; }
-    .list li { margin: .4em 0; color: var(--muted); }
+      .grid.cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
 
-    .faq details { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
-    .faq details + details { margin-top: 10px; }
-    .faq summary { cursor: pointer; font-weight: 600; }
-    .faq p { margin: 8px 0 0; color: var(--muted); }
+    .feature {
+      padding: 18px;
+    }
 
-    .site-footer { border-top: 1px solid var(--line); background: #fff; }
-    .foot { display: grid; gap: 16px; align-items: center; padding: 28px 0; }
-    @media (min-width: 768px) { .foot { grid-template-columns: 1fr auto auto; } }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--brand);
+      margin-bottom: 8px;
+    }
 
-    @media print { .site-header, .cta a[href^="#how"] { display: none !important; } .section { break-inside: avoid; } }
+    .feature h3 {
+      margin: 4px 0 8px;
+      font-size: 16px;
+    }
 
-    .skip { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .skip:focus { position: static; width: auto; height: auto; padding: 6px 10px; background: #111; color: #fff; }
+    .feature p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .step {
+      padding: 18px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--brand);
+      color: var(--brand);
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .list {
+      padding-left: 1.2em;
+      margin: 0;
+    }
+
+    .list li {
+      margin: .4em 0;
+      color: var(--muted);
+    }
+
+    .faq details {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq details+details {
+      margin-top: 10px;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .faq p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    /* Google Form responsive scale */
+    .gform-scale {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .gform-scale iframe {
+      display: block;
+      width: 640px;
+      /* フォームの実寸 */
+      height: 1200px;
+      /* 余裕を持たせた高さ（後述のJSでスケールに合わせて再計算） */
+      border: 0;
+      transform-origin: 0 0;
+      /* 左上基準で縮小拡大 */
+    }
+
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .foot {
+      display: grid;
+      gap: 16px;
+      align-items: center;
+      padding: 28px 0;
+    }
+
+    @media (min-width: 768px) {
+      .foot {
+        grid-template-columns: 1fr auto auto;
+      }
+    }
+
+    @media print {
+
+      .site-header,
+      .cta a[href^="#how"] {
+        display: none !important;
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 6px 10px;
+      background: #111;
+      color: #fff;
+    }
   </style>
 </head>
+
 <body>
   <a href="#main" class="skip">本文へスキップ</a>
 
@@ -112,7 +431,8 @@
     <section class="hero page" data-page="home">
       <div class="container hero-grid">
         <div>
-          <div class="pill"><span>歩く・移動するほどおトク</span><span class="dot" aria-hidden="true"></span><span>健康促進をサポート</span></div>
+          <div class="pill"><span>歩く・移動するほどおトク</span><span class="dot" aria-hidden="true"></span><span>健康促進をサポート</span>
+          </div>
           <h1>日々の移動を価値に変える健康促進アプリ</h1>
           <p>当社はスマートフォン向け健康促進アプリの開発・運営を行っています。</p>
           <div class="cta">
@@ -121,10 +441,9 @@
           </div>
         </div>
         <div>
-          <div class="kv-ph card" role="img" aria-label="キービジュアル（仮）">
+          <div class="kv-ph card" role="img" aria-label="キービジュアル">
             <div class="kv-inner">
-              <div class="muted" style="font-size:12px;">キービジュアル（仮）</div>
-              <div class="ph-rect" aria-hidden="true"></div>
+              <div class="ph-rect" aria-hidden="true"><img src="img/main.png" ></div>
             </div>
           </div>
         </div>
@@ -161,6 +480,12 @@
             <h3>ポイントを貯めて交換</h3>
             <p class="muted">目標達成や広告視聴でポイントが即時付与。貯まったらデジタルギフト等に交換。</p>
           </div>
+        </div>
+        <div class="grid col-1" style="margin-top:16px;">
+          <div class="card" style="padding: 20px;">
+            <img src="img/mock.png" alt="">
+          </div>
+
         </div>
       </div>
     </section>
@@ -287,20 +612,28 @@
     <section class="section page" data-page="contact" hidden>
       <div class="container">
         <h2>お問い合わせ</h2>
-        <div class="grid cols-2">
+        <div class="grid cols-1">
           <div class="card" style="padding:20px;">
             <h3>フォーム</h3>
-            <p class="muted">Googleフォーム / Formrun の埋め込みが可能です。公開時に差し替えてください。</p>
-            <div class="ph-rect" style="height:220px; margin-top:10px;" aria-hidden="true"></div>
+
+
+            <div class="gform-scale">
+              <iframe id="gform" title="お問い合わせフォーム"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdj7tOAigROLZwMr00Rli78F07zqjgfydNIaYItkPrAST4yeg/viewform?embedded=true"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+
+
           </div>
-          <div class="card" style="padding:20px;">
+          <!--<div class="card" style="padding:20px;">
             <h3>連絡先</h3>
             <ul class="list">
               <li>メール：<a href="mailto:contact@calshe.example" class="btn" style="margin-top:6px;">contact@calshe.example</a></li>
               <li style="margin-top:8px;">電話（任意）：<span class="muted">未掲載</span></li>
             </ul>
             <p class="muted" style="margin-top:12px; font-size:12px;">所在地につきましては、事業取引に必要な場合に個別開示しております。</p>
-          </div>
+          </div>-->
         </div>
       </div>
     </section>
@@ -324,33 +657,33 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 
     // 疑似マルチページ：?page=home|service|contact で切替
-    function setPage(p){
+    function setPage(p) {
       var pages = document.querySelectorAll('.page');
-      pages.forEach(function(s){ s.hidden = s.getAttribute('data-page') !== p; });
+      pages.forEach(function (s) { s.hidden = s.getAttribute('data-page') !== p; });
       // nav active
-      document.querySelectorAll('.nav-links a').forEach(function(a){ a.removeAttribute('aria-current'); });
-      var current = document.getElementById('nav-'+p);
-      if(current) current.setAttribute('aria-current','page');
+      document.querySelectorAll('.nav-links a').forEach(function (a) { a.removeAttribute('aria-current'); });
+      var current = document.getElementById('nav-' + p);
+      if (current) current.setAttribute('aria-current', 'page');
     }
-    function getPage(){
+    function getPage() {
       var m = location.search.match(/page=([a-z]+)/);
       return m ? m[1] : 'home';
     }
     // 初期表示
     setPage(getPage());
-    window.addEventListener('popstate', function(){ setPage(getPage()); });
+    window.addEventListener('popstate', function () { setPage(getPage()); });
 
     // ヘッダーナビ／「詳細を見る」を押した時に、リロードせず切替
-    document.querySelectorAll('.nav-links a[href^="?page="], #go-service').forEach(function(a){
-      a.addEventListener('click', function(e){
+    document.querySelectorAll('.nav-links a[href^="?page="], #go-service').forEach(function (a) {
+      a.addEventListener('click', function (e) {
         var m = this.getAttribute('href').match(/page=([a-z]+)/);
-        if(m){ e.preventDefault(); history.pushState({}, '', '?page='+m[1]); setPage(m[1]); }
+        if (m) { e.preventDefault(); history.pushState({}, '', '?page=' + m[1]); setPage(m[1]); }
       });
     });
 
     // スムーズスクロール（同一ページ内用）
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){
-      a.addEventListener('click', function(e){
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
         var id = this.getAttribute('href');
         if (id.length > 1) {
           var el = document.querySelector(id);
@@ -358,6 +691,44 @@
         }
       });
     });
+
   </script>
+  <script>
+(function () {
+  const wrap  = document.querySelector('.gform-scale');
+  const frame = document.getElementById('gform');
+
+  const BASE_W = 640;   // Googleフォームの基準幅
+  const BASE_H = 800;   // 余裕高さ（必要に応じて調整）
+
+  if (!wrap || !frame) return;
+
+  // 実寸を明示（縮小は transform で）
+  frame.style.width = BASE_W + 'px';
+  frame.style.height = BASE_H + 'px';
+  frame.style.transformOrigin = '0 0';
+
+  function fit() {
+    const cw = wrap.clientWidth || document.documentElement.clientWidth || window.innerWidth || BASE_W;
+    const scale = Math.min(1, cw / BASE_W);
+    frame.style.transform = 'scale(' + scale + ')';
+    // ★ ラッパーの高さに縮小後の高さを設定（ズレ・はみ出し防止）
+    wrap.style.height = Math.ceil(BASE_H * scale) + 'px';
+  }
+
+  let tid;
+  const scheduleFit = () => { clearTimeout(tid); tid = setTimeout(fit, 80); };
+  window.addEventListener('resize', scheduleFit, { passive: true });
+  window.addEventListener('orientationchange', scheduleFit, { passive: true });
+  window.addEventListener('pageshow', scheduleFit, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleFit).observe(wrap);
+
+  fit();
+})();
+</script>
+
+
+
 </body>
+
 </html>
